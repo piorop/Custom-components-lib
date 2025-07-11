@@ -1,0 +1,46 @@
+@use 'sass:color';
+
+$primary-color: #1976d2;
+
+.button {
+  font-size: 13px;
+  border-radius: 6px;
+  color: $primary-color;
+  background-color: $primary-color;
+
+  &--small {
+    padding: 4px 10px;
+  }
+
+  &--medium {
+    padding: 6px 16px;
+  }
+
+  &--large {
+    padding: 8px 22px;
+  }
+
+  &--text {
+    background-color: rgba(#1976d2, 0);
+    border: none;
+    &:hover {
+      background-color: rgba($primary-color, 0.1);
+    }
+  }
+
+  &--outlined {
+    background-color: rgba(#1976d2, 0);
+    border-color: #1976d2;
+    &:hover {
+      background-color: rgba($primary-color, 0.1);
+    }
+  }
+
+  &--contained {
+    color: white;
+    border: none;
+    &:hover {
+      background-color: color.adjust(#1976d2, $lightness: -10%);
+    }
+  }
+}
