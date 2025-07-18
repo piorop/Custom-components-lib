@@ -1,16 +1,22 @@
 {
   "name": "@piorop/custom-components-lib",
-  "version": "1.4.0",
+  "version": "1.4.10",
   "main": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
-    "build": "npm run format && npm run lint && webpack",
+    "build": "npm run format && npm run lint && webpack && npm run build-types",
+    "webpack": "webpack",
     "tsc": "tsc",
     "lint": "eslint",
     "format": "npx prettier . --write",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build-types": "tsc -p tsconfig.types.json"
   },
   "keywords": [],
   "author": "",

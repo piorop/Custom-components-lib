@@ -1,6 +1,10 @@
 import React, { useId } from 'react';
 import styles from './Select.module.scss';
-import { SelectProps } from '../../Types/select';
+import { ComponentProps } from 'react';
+
+export interface SelectProps extends ComponentProps<'select'> {
+  label: string;
+}
 
 export default function Select({
   label,

@@ -1,6 +1,15 @@
 import React from 'react';
 import styles from './Button.module.scss';
-import { ButtonProps } from '../../Types/button';
+import { ComponentProps } from 'react';
+
+export type ButtonVariant = 'text' | 'contained' | 'outlined';
+export type ButtonSize = 'small' | 'medium' | 'large';
+
+export interface ButtonProps extends ComponentProps<'button'> {
+  label: string;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+}
 
 export default function Button({
   label,

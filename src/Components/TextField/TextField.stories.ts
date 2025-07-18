@@ -59,3 +59,11 @@ export const NoError: Story = {
     error: false,
   },
 };
+
+export const withPlaceholder: Story = {
+  name: 'with placeholder',
+  args: {
+    label: 'name',
+    placeholder: 'testowy',
+  },
+};

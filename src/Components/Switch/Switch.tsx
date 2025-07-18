@@ -1,6 +1,11 @@
 import React from 'react';
 import styles from './Switch.module.scss';
-import { SwitchProps } from '../../Types/switch';
+
+export interface SwitchProps {
+  checked?: boolean;
+  disabled?: boolean;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+}
 
 export default function Switch({ checked, disabled, onChange }: SwitchProps) {
   return (
