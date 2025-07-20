@@ -17,37 +17,50 @@ export default meta;
 type Story = StoryObj<typeof Select>;
 
 export const Test1: Story = {
-  name: 'Simple test(without change value)',
+  name: 'Simple test (without change value)',
   args: {
     label: 'Age',
-    children: (
-      <>
-        <option>Ten</option>
-        <option>Twenty</option>
-        <option>Thirty</option>
-      </>
-    ),
   },
+  render: (args) => (
+    <Select {...args} value="" onChange={() => {}}>
+      <option value="1">Ten</option>
+      <option value="2">Twenty</option>
+      <option value="3">Thirty</option>
+    </Select>
+  ),
 };
 
 export const Test2: Story = {
   name: 'Selected value Test',
   args: {
-    label: 'Age',
+    label: 'AgeS',
+    name: 'ageS',
+    value: 'DAS',
   },
   render: (args) => {
     const [value, setValue] = useState('');
 
     return (
-      <Select
-        {...args}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      >
-        <option>Ten</option>
-        <option>Twenty</option>
-        <option>Thirty</option>
-      </Select>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <Select
+          {...args}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        >
+          <option value="1">Ten</option>
+          <option value="2">Twentysaddasasdadsadsdssdadasasddasads</option>
+          <option value="3">Thirty</option>
+        </Select>
+        <Select
+          {...args}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        >
+          <option value="1">Ten</option>
+          <option value="2">Twentysaddasasdadsadsdssdadasasddasads</option>
+          <option value="3">Thirty</option>
+        </Select>
+      </div>
     );
   },
 };

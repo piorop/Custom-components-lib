@@ -6,7 +6,7 @@ export type ButtonVariant = 'text' | 'contained' | 'outlined';
 export type ButtonSize = 'small' | 'medium' | 'large';
 
 export interface ButtonProps extends ComponentProps<'button'> {
-  label: string;
+  label?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
 }

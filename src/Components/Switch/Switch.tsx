@@ -9,7 +9,7 @@ export interface SwitchProps {
 
 export default function Switch({ checked, disabled, onChange }: SwitchProps) {
   return (
-    <label className={styles.switch}>
+    <label className={`${styles.switch}  ${disabled ? styles.isDisabled : ''}`}>
       <input
         type="checkbox"
         checked={checked}
